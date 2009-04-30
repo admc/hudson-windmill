@@ -1,0 +1,19 @@
+started
+[workspace] $ windmill safari http://www.google.com test=~/Desktop/crap/test_google.py exit
+windmill.browser.safari: INFO     ['/Applications/Safari.app/Contents/MacOS/Safari', '/var/folders/YO/YOAvf2hSGt0+VnBIAKuImE+++TM/-Tmp-/tmpHuPJRV.html']
+2009-04-29 18:39:57.560 Safari[71690:10b] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0xe003, name = 'com.apple.Safari.ServiceProvider'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+test_results: ERROR    Test Failure in test {'version': '0.1', 'suite_name': u'test_google', 'result': False, 'starttime': u'2009-3-29T18:40:29.806Z', 'output': None, 'debug': u"Looking up xpath //div[@id='bodyContent']/p[18]/a[4], failed.", u'params': {u'xpath': u"//div[@id='bodyContent']/p[18]/a[4]", 'uuid': 'e2bc7248-3527-11de-a98b-002332da2796'}, 'endtime': u'2009-3-29T18:40:29.817Z', u'method': u'click'}
+windmill.authoring: ERROR    Functest test failed: test_recordingSuite0
+Leopard libedit detected.
+Server running...
+Traceback (most recent call last):[39;49;00m
+  File [39;49;00m[36;01m"/Users/adam/Desktop/crap/test_google.py"[39;49;00m, line [39;49;00m[36;01m15[39;49;00m, in [39;49;00mtest_recordingSuite0[39;49;00m
+    [39;49;00mclient[39;49;00m.[39;49;00mclick[39;49;00m([39;49;00mxpath[39;49;00m=[39;49;00m[33mu"[39;49;00m[33m//div[@id=[39;49;00m[33m'[39;49;00m[33mbodyContent[39;49;00m[33m'[39;49;00m[33m]/p[18]/a[4][39;49;00m[33m"[39;49;00m)[39;49;00m
+  File [39;49;00m[36;01m"/Users/adam/Documents/projects/windmill/branches/1.1.x/windmill/authoring/__init__.py"[39;49;00m, line [39;49;00m[36;01m162[39;49;00m, in [39;49;00m__call__[39;49;00m
+    [39;49;00m[36;01mreturn[39;49;00m [39;49;00m[36;01mself[39;49;00m.[39;49;00mexec_method[39;49;00m([39;49;00m[36;01mself[39;49;00m.[39;49;00maction_name[39;49;00m,[39;49;00m [39;49;00m*[39;49;00m*[39;49;00mkwargs[39;49;00m)[39;49;00m
+  File [39;49;00m[36;01m"/Users/adam/Documents/projects/windmill/branches/1.1.x/windmill/authoring/__init__.py"[39;49;00m, line [39;49;00m[36;01m215[39;49;00m, in [39;49;00m_exec_test[39;49;00m
+    [39;49;00m[36;01mraise[39;49;00m [39;49;00mWindmillTestClientException[39;49;00m([39;49;00mresult[39;49;00m[[39;49;00m[33m'[39;49;00m[33mresult[39;49;00m[33m'[39;49;00m][39;49;00m)[39;49;00m
+[04m[32;01mWindmillTestClientException: {u'suite_name': u'test_google', u'result': False, u'starttime': u'2009-3-29T18:40:29.806Z', u'params': {u'xpath': u"//div[@id='bodyContent']/p[18]/a[4]"}, u'debug': u"Looking up xpath //div[@id='bodyContent']/p[18]/a[4], failed.", u'output': None, u'endtime': u'2009-3-29T18:40:29.817Z', u'method'[39;49;00m: [39;49;00mu'click'}[39;49;00m
+
+finished: SUCCESS

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions class="java.util.concurrent.CopyOnWriteArrayList"/>
+  <number>22</number>
+  <result>SUCCESS</result>
+  <duration>36316</duration>
+  <charset>MacRoman</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <hudsonVersion>1.279</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits/>
+</build>

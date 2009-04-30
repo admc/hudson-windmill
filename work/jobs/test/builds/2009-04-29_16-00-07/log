@@ -1,0 +1,3 @@
+started
+Starting Windmill Tests:windmill firefox http:// test=path/to/tests port=4445 
+finished: SUCCESS

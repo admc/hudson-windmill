@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Plugin-Class: HudsonWindmill.PluginImpl
+Short-Name: HudsonWindmillPlugin
+Long-Name: Unnamed - HudsonWindmill:HudsonWindmillPlugin:hpi:1.0-SNAPS
+ HOT
+Plugin-Version: 1.0-SNAPSHOT (private-04/29/2009 06:55-adam)
+Hudson-Version: 1.279
+Libraries: /Users/adam/Documents/projects/HudsonWindmillPlugin/target/
+ classes,/Users/adam/.m2/repository/org/jvnet/hudson/main/hudson-war/1
+ .279/hudson-war-1.279.war
+Resource-Path: /Users/adam/Documents/projects/HudsonWindmillPlugin/src
+ /main/webapp
+

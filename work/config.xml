@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson>
+  <numExecutors>2</numExecutors>
+  <mode>NORMAL</mode>
+  <authorizationStrategy class="hudson.security.AuthorizationStrategy$Unsecured"/>
+  <securityRealm class="hudson.security.SecurityRealm$None"/>
+  <jdks/>
+  <clouds/>
+  <slaves/>
+  <quietPeriod>5</quietPeriod>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>All</name>
+    </hudson.model.AllView>
+  </views>
+  <primaryView>All</primaryView>
+  <slaveAgentPort>0</slaveAgentPort>
+  <label></label>
+</hudson>
