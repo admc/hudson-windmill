@@ -87,7 +87,7 @@ public class WindmillBuilder extends Builder {
         } else {
             runner = "windmill "+ browser + " " + startURL + " test=" + tests + " port="+port + " exit " + other;
         }
-        if (enablessl.equals("") || enablessl.equals("false")){
+        if (!enablessl.equals("true")){
             runner += " nossl";
         }
 
@@ -117,7 +117,7 @@ public class WindmillBuilder extends Builder {
                 }
             }
 
-                //listener.getLogger().println("Starting Windmill Test Run\n" +cmd);
+            //listener.getLogger().println("Starting Windmill Test Run\n" +cmd);
             exitCode = launcher.launch(cmd, build.getEnvVars(), listener.getLogger(), build.getProject().getWorkspace()).join();
         }
         
