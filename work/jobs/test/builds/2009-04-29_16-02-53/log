@@ -1,4 +1,0 @@
-started
-Starting Windmill Test Run
-windmill firefox http:// test=path/to/tests 
-finished: SUCCESS

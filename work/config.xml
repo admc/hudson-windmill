@@ -6,7 +6,18 @@
   <securityRealm class="hudson.security.SecurityRealm$None"/>
   <jdks/>
   <clouds/>
-  <slaves/>
+  <slaves>
+    <slave>
+      <name>testwin</name>
+      <description></description>
+      <remoteFS>c:\hudson</remoteFS>
+      <numExecutors>1</numExecutors>
+      <mode>NORMAL</mode>
+      <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+      <launcher class="hudson.slaves.JNLPLauncher"/>
+      <label></label>
+    </slave>
+  </slaves>
   <quietPeriod>5</quietPeriod>
   <views>
     <hudson.model.AllView>

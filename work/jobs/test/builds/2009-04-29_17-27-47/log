@@ -1,4 +1,0 @@
-started
-[workspace] $ windmill safari http://www.google.com test=~/Desktop/crap/test_google.py exit
-Build was aborted
-finished: ABORTED

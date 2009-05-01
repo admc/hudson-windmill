@@ -9,6 +9,6 @@ Plugin-Class: HudsonWindmill.PluginImpl
 Short-Name: HudsonWindmillPlugin
 Long-Name: Unnamed - HudsonWindmill:HudsonWindmillPlugin:hpi:1.0-SNAPS
  HOT
-Plugin-Version: 1.0-SNAPSHOT (private-04/29/2009 06:58-adam)
+Plugin-Version: 1.0-SNAPSHOT (private-04/30/2009 04:10-adam)
 Hudson-Version: 1.279
 

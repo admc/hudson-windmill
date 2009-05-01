@@ -40,14 +40,17 @@ public class WindmillBuilder extends Builder {
     private final String tests;
     private final String port;
     private final String other;
+    private final String enablessl;
+
 
     @DataBoundConstructor
-    public WindmillBuilder(String browser, String startURL, String tests, String port, String other) {
+    public WindmillBuilder(String browser, String startURL, String tests, String port, String other, String enablessl) {
         this.browser = browser;
         this.startURL = startURL;
         this.tests = tests;
         this.port = port;
         this.other = other;
+        this.enablessl = enablessl;
     }
 
     /**
@@ -68,6 +71,10 @@ public class WindmillBuilder extends Builder {
     public String getPort() {
         return port;
     }
+    public String getSSL(){
+        return enablessl;
+    }
+
     public String buildCommand(){
 
         if (browser.equals("")){
@@ -80,13 +87,17 @@ public class WindmillBuilder extends Builder {
         } else {
             runner = "windmill "+ browser + " " + startURL + " test=" + tests + " port="+port + " exit " + other;
         }
+        if (enablessl.equals("") || enablessl.equals("false")){
+            runner += " nossl";
+        }
+
         return runner;
     }
 
     public boolean perform(Build build, Launcher launcher, BuildListener listener)  throws IOException, InterruptedException {
         // this is where you 'build' the project
         //We don't need to show the port if it's the default
-
+        int exitCode = 0;
         if (this.getTests().equals("")){
             listener.error("Windmill can't run without any tests...");
             build.setResult(Result.FAILURE);
@@ -105,10 +116,16 @@ public class WindmillBuilder extends Builder {
                     //do nothing because it's alright
                 }
             }
+
                 //listener.getLogger().println("Starting Windmill Test Run\n" +cmd);
-            launcher.launch(cmd, build.getEnvVars(), listener.getLogger(), build.getProject().getWorkspace()).join();
+            exitCode = launcher.launch(cmd, build.getEnvVars(), listener.getLogger(), build.getProject().getWorkspace()).join();
         }
-       
+        
+
+        if (exitCode != 0){
+             build.setResult(Result.UNSTABLE);
+        }
+        
         return true;
     }
 
@@ -150,24 +167,24 @@ public class WindmillBuilder extends Builder {
          * @param value
          *      This receives the current value of the field.
          */
-        public void doCheckBrowser(StaplerRequest req, StaplerResponse rsp, @QueryParameter final String value) throws IOException, ServletException {
-            new FormFieldValidator(req,rsp,null) {
-                /**
-                 * The real check goes here. In the end, depending on which
-                 * method you call, the browser shows text differently.
-                 */
-                protected void check() throws IOException, ServletException {
-                    if(value.length()==0)
-                        error("Please set a name");
-                    else
-                    if(value.length()<1)
-                        warning("Isn't the name too short?");
-                    else
-                        ok();
-
-                }
-            }.process();
-        }
+//        public void doCheckBrowser(StaplerRequest req, StaplerResponse rsp, @QueryParameter final String value) throws IOException, ServletException {
+//            new FormFieldValidator(req,rsp,null) {
+//                /**
+//                 * The real check goes here. In the end, depending on which
+//                 * method you call, the browser shows text differently.
+//                 */
+//                protected void check() throws IOException, ServletException {
+//                    if(value.length()==0)
+//                        error("Please set a name");
+//                    else
+//                    if(value.length()<1)
+//                        warning("Isn't the name too short?");
+//                    else
+//                        ok();
+//
+//                }
+//            }.process();
+//        }
 
         /**
          * This human readable name is used in the configuration screen.
@@ -190,6 +207,7 @@ public class WindmillBuilder extends Builder {
         public boolean cleanup() {
             return cleanup;
         }
+
     }
 }
 

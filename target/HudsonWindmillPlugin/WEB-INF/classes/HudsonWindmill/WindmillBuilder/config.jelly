@@ -4,7 +4,8 @@
 
     See global.jelly for a general discussion about jelly script.
   -->
-  <f:entry title="Browser" help="${rootURL}/plugin/HudsonWindmillPlugin/help-browser.html">
+  <f:entry title="Browser" description="Default firefox"
+    help="${rootURL}/plugin/HudsonWindmillPlugin/help-browser.html">
     <!--
       Creates a text field that shows the value of the "name" property.
       When submitted, it will be passed to the corresponding constructor parameter.
@@ -13,7 +14,8 @@
 
   </f:entry>
 
-  <f:entry title="StartURL" help="${rootURL}/plugin/HudsonWindmillPlugin/help-starturl.html">
+  <f:entry title="StartURL" description="http://..."
+  help="${rootURL}/plugin/HudsonWindmillPlugin/help-starturl.html">
     <!--
       Creates a text field that shows the value of the "name" property.
       When submitted, it will be passed to the corresponding constructor parameter.
@@ -31,7 +33,8 @@
     <f:textbox field="tests"/>
 
   </f:entry>
-  <f:entry title="Port" help="${rootURL}/plugin/HudsonWindmillPlugin/help-tests.html">
+  <f:entry title="Port" description="default 4444."
+  help="${rootURL}/plugin/HudsonWindmillPlugin/help-tests.html">
     <!--
       Creates a text field that shows the value of the "name" property.
       When submitted, it will be passed to the corresponding constructor parameter.
@@ -40,13 +43,19 @@
     <f:textbox field="port"/>
   </f:entry>
 
-  <f:entry title="Other" help="${rootURL}/plugin/HudsonWindmillPlugin/help-other.html">
+  <f:entry title="Other" 
+  help="${rootURL}/plugin/HudsonWindmillPlugin/help-other.html">
     <!--
       Creates a text field that shows the value of the "name" property.
       When submitted, it will be passed to the corresponding constructor parameter.
     -->
 
     <f:textbox field="other" />
+  </f:entry>
 
+  <f:entry title="EnableSSL" description="Default false."
+      help="${rootURL}/plugin/HudsonWindmillPlugin/help-ssl.html">
+
+      <f:textbox field="enablessl" />
   </f:entry>
 </j:jelly>
