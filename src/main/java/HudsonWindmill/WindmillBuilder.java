@@ -15,6 +15,8 @@ import org.kohsuke.stapler.QueryParameter;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
+import java.util.Map;
+
 
 /**
  * Sample {@link Builder}.
@@ -35,7 +37,7 @@ import java.io.IOException;
  */
 public class WindmillBuilder extends Builder {
 
-    private final String browser;
+    private String browser;
     private final String startURL;
     private final String tests;
     private final String port;
@@ -58,6 +60,10 @@ public class WindmillBuilder extends Builder {
      */
     public String getBrowser() {
         return browser;
+    }
+    public String setBrowser(String browser) {
+        this.browser = browser;
+        return this.browser;
     }
 
     public String getStartURL() {
@@ -107,10 +113,31 @@ public class WindmillBuilder extends Builder {
             build.setResult(Result.FAILURE);
         }
         else {
+            Map<String,String> envVars = build.getEnvVars();
+            envVars.putAll(build.getBuildVariables());
+
+            //if there is a dynamically set browser, use that
+            if (envVars.containsKey("browser")){
+                this.setBrowser(envVars.get("browser"));
+            }
+
+            //build the exec string
             String cmd = this.buildCommand();
+
+            //do magical replacement of %ACCOUNT% string
+            if (cmd.contains("%ACCOUNT%")){
+                listener.getLogger().println("Found it");
+                if (browser.equals("firefox")){
+                   cmd = cmd.replaceAll("%ACCOUNT%", "1");
+                }
+                else {
+                    cmd = cmd.replaceAll("%ACCOUNT%", "2");
+                }
+            }
+
             if (this.DESCRIPTOR.cleanup()){
                 try {
-                    launcher.launch("clean_run.py windmill " + browser, build.getEnvVars(), listener.getLogger(), build.getProject().getWorkspace()).join();
+                    launcher.launch("clean_run.py windmill " + browser, envVars, listener.getLogger(), build.getProject().getWorkspace()).join();
                 }
                 catch(IOException e){
                     //do nothing because it's alright
@@ -118,7 +145,7 @@ public class WindmillBuilder extends Builder {
             }
 
             //listener.getLogger().println("Starting Windmill Test Run\n" +cmd);
-            exitCode = launcher.launch(cmd, build.getEnvVars(), listener.getLogger(), build.getProject().getWorkspace()).join();
+            exitCode = launcher.launch(cmd, envVars, listener.getLogger(), build.getProject().getWorkspace()).join();
         }
         
 
