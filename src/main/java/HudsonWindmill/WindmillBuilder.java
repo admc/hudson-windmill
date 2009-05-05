@@ -123,10 +123,9 @@ public class WindmillBuilder extends Builder {
 
             //build the exec string
             String cmd = this.buildCommand();
-
+            
             //do magical replacement of %ACCOUNT% string
             if (cmd.contains("%ACCOUNT%")){
-                listener.getLogger().println("Found it");
                 if (browser.equals("firefox")){
                    cmd = cmd.replaceAll("%ACCOUNT%", "1");
                 }
