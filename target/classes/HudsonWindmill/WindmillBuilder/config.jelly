@@ -33,29 +33,34 @@
     <f:textbox field="tests"/>
 
   </f:entry>
-  <f:entry title="Port" description="default 4444."
-  help="${rootURL}/plugin/HudsonWindmillPlugin/help-tests.html">
-    <!--
-      Creates a text field that shows the value of the "name" property.
-      When submitted, it will be passed to the corresponding constructor parameter.
-    -->
 
-    <f:textbox field="port"/>
-  </f:entry>
+  <f:advanced>
+      <f:entry title="Port" description="default 4444."
+        help="${rootURL}/plugin/HudsonWindmillPlugin/help-port.html">
+        <!--
+          Creates a text field that shows the value of the "name" property.
+          When submitted, it will be passed to the corresponding constructor parameter.
+        -->
 
-  <f:entry title="Other" 
-  help="${rootURL}/plugin/HudsonWindmillPlugin/help-other.html">
-    <!--
-      Creates a text field that shows the value of the "name" property.
-      When submitted, it will be passed to the corresponding constructor parameter.
-    -->
+        <f:textbox field="port"/>
+      </f:entry>
 
-    <f:textbox field="other" />
-  </f:entry>
+      <f:entry title="Other"
+        help="${rootURL}/plugin/HudsonWindmillPlugin/help-other.html">
+        <!--
+          Creates a text field that shows the value of the "name" property.
+          When submitted, it will be passed to the corresponding constructor parameter.
+        -->
 
-  <f:entry title="EnableSSL" description="Default false."
-      help="${rootURL}/plugin/HudsonWindmillPlugin/help-ssl.html">
+        <f:textbox field="other" />
+      </f:entry>
 
-      <f:textbox field="enablessl" />
-  </f:entry>
+      <f:entry title="SSL" description="Default disabled."
+          help="${rootURL}/plugin/HudsonWindmillPlugin/help-ssl.html">
+
+            <f:checkbox name="enablessl" checked="${instance.enablessl}" />
+
+      </f:entry>
+  </f:advanced>
+
 </j:jelly>

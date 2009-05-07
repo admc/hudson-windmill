@@ -42,11 +42,11 @@ public class WindmillBuilder extends Builder {
     private final String tests;
     private final String port;
     private final String other;
-    private final String enablessl;
+    private final boolean enablessl;
 
 
     @DataBoundConstructor
-    public WindmillBuilder(String browser, String startURL, String tests, String port, String other, String enablessl) {
+    public WindmillBuilder(String browser, String startURL, String tests, String port, String other, boolean enablessl) {
         this.browser = browser;
         this.startURL = startURL;
         this.tests = tests;
@@ -77,7 +77,12 @@ public class WindmillBuilder extends Builder {
     public String getPort() {
         return port;
     }
-    public String getSSL(){
+
+    public String getOther() {
+        return other;
+    }
+    
+    public boolean getEnablessl(){
         return enablessl;
     }
 
@@ -93,7 +98,7 @@ public class WindmillBuilder extends Builder {
         } else {
             runner = "windmill "+ browser + " " + startURL + " test=" + tests + " port="+port + " exit " + other;
         }
-        if (!enablessl.equals("true")){
+        if (!enablessl){
             runner += " nossl";
         }
 

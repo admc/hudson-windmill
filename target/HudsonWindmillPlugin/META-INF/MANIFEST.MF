@@ -7,8 +7,7 @@ Implementation-Title: HudsonWindmillPlugin
 Implementation-Version: 1.0-SNAPSHOT
 Plugin-Class: HudsonWindmill.PluginImpl
 Short-Name: HudsonWindmillPlugin
-Long-Name: Unnamed - HudsonWindmill:HudsonWindmillPlugin:hpi:1.0-SNAPS
- HOT
-Plugin-Version: 1.0-SNAPSHOT (private-04/30/2009 04:10-adam)
+Long-Name: HudsonWindmillPlugin
+Plugin-Version: 1.0-SNAPSHOT (private-05/06/2009 07:20-adam)
 Hudson-Version: 1.279
 
