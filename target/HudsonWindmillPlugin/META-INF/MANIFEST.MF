@@ -8,6 +8,6 @@ Implementation-Version: 1.0-SNAPSHOT
 Plugin-Class: HudsonWindmill.PluginImpl
 Short-Name: HudsonWindmillPlugin
 Long-Name: HudsonWindmillPlugin
-Plugin-Version: 1.0-SNAPSHOT (private-05/06/2009 07:20-adam)
+Plugin-Version: 1.0-SNAPSHOT (private-05/12/2009 03:13-adam)
 Hudson-Version: 1.279
 

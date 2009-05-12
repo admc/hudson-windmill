@@ -98,8 +98,8 @@ public class WindmillBuilder extends Builder {
         } else {
             runner = "windmill "+ browser + " " + startURL + " test=" + tests + " port="+port + " exit " + other;
         }
-        if (!enablessl){
-            runner += " nossl";
+        if (enablessl){
+            runner += " ssl";
         }
 
         return runner;

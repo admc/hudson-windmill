@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Plugin-Class: HudsonWindmill.PluginImpl
 Short-Name: HudsonWindmillPlugin
 Long-Name: HudsonWindmillPlugin
-Plugin-Version: 1.0-SNAPSHOT (private-05/06/2009 07:18-adam)
+Plugin-Version: 1.0-SNAPSHOT (private-05/12/2009 03:11-adam)
 Hudson-Version: 1.279
 Libraries: /Users/adam/Documents/projects/HudsonWindmillPlugin/target/
  classes,/Users/adam/.m2/repository/org/jvnet/hudson/main/hudson-war/1
