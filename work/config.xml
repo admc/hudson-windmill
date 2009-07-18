@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
+  <version>1.308</version>
   <numExecutors>2</numExecutors>
   <mode>NORMAL</mode>
   <authorizationStrategy class="hudson.security.AuthorizationStrategy$Unsecured"/>
@@ -8,14 +9,15 @@
   <clouds/>
   <slaves>
     <slave>
-      <name>testwin</name>
+      <name>win</name>
       <description></description>
       <remoteFS>c:\hudson</remoteFS>
       <numExecutors>1</numExecutors>
-      <mode>NORMAL</mode>
+      <mode>EXCLUSIVE</mode>
       <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
       <launcher class="hudson.slaves.JNLPLauncher"/>
       <label></label>
+      <nodeProperties/>
     </slave>
   </slaves>
   <quietPeriod>5</quietPeriod>
@@ -28,4 +30,7 @@
   <primaryView>All</primaryView>
   <slaveAgentPort>0</slaveAgentPort>
   <label></label>
+  <nodeProperties/>
+  <globalNodeProperties/>
+  <disabledAdministrativeMonitors/>
 </hudson>

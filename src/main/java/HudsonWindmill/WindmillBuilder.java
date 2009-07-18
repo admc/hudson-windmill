@@ -186,7 +186,7 @@ public class WindmillBuilder extends Builder {
          * <p>
          * If you don't want fields to be persisted, use <tt>transient</tt>.
          */
-        private boolean cleanup;
+        private boolean cleanup = true;
 
         DescriptorImpl() {
             super(WindmillBuilder.class);

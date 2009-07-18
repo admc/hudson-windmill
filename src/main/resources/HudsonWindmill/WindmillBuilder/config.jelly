@@ -5,7 +5,7 @@
     See global.jelly for a general discussion about jelly script.
   -->
   <f:entry title="Browser" description="Default firefox"
-    help="${rootURL}/plugin/HudsonWindmillPlugin/help-browser.html">
+    help="${rootURL}/plugin/windmill/help-browser.html">
     <!--
       Creates a text field that shows the value of the "name" property.
       When submitted, it will be passed to the corresponding constructor parameter.
@@ -15,7 +15,7 @@
   </f:entry>
 
   <f:entry title="StartURL" description="http://..."
-  help="${rootURL}/plugin/HudsonWindmillPlugin/help-starturl.html">
+  help="${rootURL}/plugin/windmill/help-starturl.html">
     <!--
       Creates a text field that shows the value of the "name" property.
       When submitted, it will be passed to the corresponding constructor parameter.
@@ -24,7 +24,7 @@
 
   </f:entry>
 
-  <f:entry title="Tests" help="${rootURL}/plugin/HudsonWindmillPlugin/help-tests.html">
+  <f:entry title="Tests" help="${rootURL}/plugin/windmill/help-tests.html">
     <!--
       Creates a text field that shows the value of the "name" property.
       When submitted, it will be passed to the corresponding constructor parameter.
@@ -36,7 +36,7 @@
 
   <f:advanced>
       <f:entry title="Port" description="default 4444."
-        help="${rootURL}/plugin/HudsonWindmillPlugin/help-port.html">
+        help="${rootURL}/plugin/windmill/help-port.html">
         <!--
           Creates a text field that shows the value of the "name" property.
           When submitted, it will be passed to the corresponding constructor parameter.
@@ -46,7 +46,7 @@
       </f:entry>
 
       <f:entry title="Other"
-        help="${rootURL}/plugin/HudsonWindmillPlugin/help-other.html">
+        help="${rootURL}/plugin/windmill/help-other.html">
         <!--
           Creates a text field that shows the value of the "name" property.
           When submitted, it will be passed to the corresponding constructor parameter.
@@ -56,7 +56,7 @@
       </f:entry>
 
       <f:entry title="SSL" description="Default disabled."
-          help="${rootURL}/plugin/HudsonWindmillPlugin/help-ssl.html">
+          help="${rootURL}/plugin/windmill/help-ssl.html">
 
             <f:checkbox name="enablessl" checked="${instance.enablessl}" />
 

@@ -19,7 +19,7 @@
     -->
     <f:entry title="Clean Run"
       description="Check if we should clean up Windmill and Browsers before runs."
-      help="${rootURL}/plugin/HudsonWindmillPlugin/help-clean.html">
+      help="${rootURL}/plugin/windmill/help-clean.html">
       <!--
         we'll have on input field. In HTML, single "namespace" is shared between
         all form components in one <form>, so we need to choose a name that doesn't
